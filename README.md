@@ -4,7 +4,10 @@ Musick is a (very) simple music web app that retrieves albums from a list of mus
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
 
+
 ## Development server
+
+Assuming you have checked out the repo and have run `npm install` inside the directory...
 
 To start a local development server, run:
 
@@ -29,6 +32,6 @@ This will compile your project and store the build artifacts in the `dist/` dire
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
 ```bash
-ng test
+ng test --no-watch
 ```
 
