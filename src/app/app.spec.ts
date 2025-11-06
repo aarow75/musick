@@ -1,11 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ToastrModule } from 'ngx-toastr';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App, HttpClientTestingModule],
+      imports: [App, HttpClientTestingModule, ToastrModule.forRoot()],
     }).compileComponents();
   });
 
@@ -19,6 +20,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Musick: Choose an music artist and mark favorite albums');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Musick');
   });
 });

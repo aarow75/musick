@@ -1,4 +1,7 @@
-html, body {
-    font-family: sans-serif;
-    font-size: 14px;
+@import 'ngx-toastr/toastr';
+
+html,
+body {
+  font-family: sans-serif;
+  font-size: 14px;
 }

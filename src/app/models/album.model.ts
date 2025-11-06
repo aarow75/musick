@@ -1,9 +1,9 @@
 export interface IAlbumArtist {
-    releases: IAlbumRelease[];
+  releases: IAlbumRelease[];
 }
 
 export interface IAlbumRelease {
-    id: string;
-    title: string;
-    date: string;
+  id: string;
+  title: string;
+  date: string;
 }

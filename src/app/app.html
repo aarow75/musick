@@ -1,21 +1,24 @@
-<h1>Musick: Choose an music artist and mark favorite albums</h1>
+<header>
+  <h1>Musick</h1>
+  <p>Choose an music artist and mark favorite albums</p>
+</header>
 <main>
   <div class="artists">
     <h2>Artists</h2>
-    @for (artist of artists;track artist) {
+    @for (artist of artists; track artist) {
       <m-artist (artistSelected)="getAlbums(artist)" [artist]="artist"></m-artist>
     }
     <h2>My Favorites</h2>
-    @for (fave of faves();track fave) {
-      <div>{{fave.title}}</div>
+    @for (fave of faves(); track fave) {
+      <div>{{ fave.title }}</div>
     }
   </div>
   <div class="albums">
-    @if(loading$ | async) {
+    @if (loading$ | async) {
       Loading...
     } @else {
       @if (currentArtist) {
-        <h2>Selected: {{currentArtist}}</h2>
+        <h2>Selected: {{ currentArtist }}</h2>
       }
       @for (album of albums?.releases; track album) {
         <m-album (markAsFavorite)="markAsFave(album)" [album]="album"></m-album>

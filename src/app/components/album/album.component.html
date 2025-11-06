@@ -1,13 +1,18 @@
 @if (album) {
-    <a class="album" href="javascript:" (click)="markAsFavorite.emit(album)">
-        <div class="cover-art">
-            <img [src]="`https://coverartarchive.org/release/${album.id}/front`">
-        </div>
-        <div><strong>{{album.title}}</strong></div>
-        @if (album.date) {
-            <div>Originally released: {{album.date}}.</div>
-        }
-    </a>
+  <a class="album" href="javascript:" (click)="markAsFavorite.emit(album)">
+    <div class="cover-art">
+      <img
+        [src]="`https://coverartarchive.org/release/${album.id}/front`"
+        (error)="handleMissingImage($event)"
+      />
+    </div>
+    <div>
+      <strong>{{ album.title }}</strong>
+    </div>
+    @if (album.date) {
+      <div>Originally released: {{ album.date | date }}.</div>
+    }
+  </a>
 } @else {
-    Loading&hellip;
+  Loading&hellip;
 }
