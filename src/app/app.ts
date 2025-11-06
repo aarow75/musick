@@ -53,9 +53,14 @@ export class App implements OnInit, OnDestroy {
     this.mbService
       .getAlbums(artist)
       .pipe(takeUntil(this.unsub$))
-      .subscribe((r: any) => {
-        this.albums = r;
-        this.loadingSubject.next(false);
+      .subscribe({
+        next: (response: any) => {
+          this.albums = response;
+          this.loadingSubject.next(false);
+        },
+        error: (err: any) => {
+          this.toastr.error(err.message, err.name);
+        },
       });
   }
 
