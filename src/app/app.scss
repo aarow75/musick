@@ -1,0 +1,16 @@
+main {
+    display: flex;
+}
+
+h1, .albums, .artists {
+    padding: 8px;
+}
+
+.artists {
+    min-width: 300px;
+}
+
+.albums {
+    height: 100vh;
+    overflow-y: auto;
+}
